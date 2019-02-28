@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+    <ImageButton
+        android:id="@+id/card1"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:onClick="selectCardOnClick"
+        app:layout_constraintBottom_toTopOf="@+id/card4"
+        app:layout_constraintEnd_toStartOf="@+id/card2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <ImageButton
+        android:id="@+id/card2"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:onClick="selectCardOnClick"
+        app:layout_constraintBottom_toTopOf="@+id/card5"
+        app:layout_constraintEnd_toStartOf="@+id/card3"
+        app:layout_constraintStart_toEndOf="@+id/card1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <ImageButton
+        android:id="@+id/card3"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:onClick="selectCardOnClick"
+        app:layout_constraintBottom_toTopOf="@+id/card6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/card2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <ImageButton
+        android:id="@+id/card4"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:onClick="selectCardOnClick"
+        app:layout_constraintBottom_toTopOf="@+id/card7"
+        app:layout_constraintEnd_toStartOf="@+id/card5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card1"
+        app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <ImageButton
+        android:id="@+id/card5"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:onClick="selectCardOnClick"
+        app:layout_constraintBottom_toTopOf="@+id/card8"
+        app:layout_constraintEnd_toStartOf="@+id/card6"
+        app:layout_constraintStart_toEndOf="@+id/card4"
+        app:layout_constraintTop_toBottomOf="@+id/card2"
+        app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <ImageButton
+        android:id="@+id/card6"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:onClick="selectCardOnClick"
+        app:layout_constraintBottom_toTopOf="@+id/card8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/card5"
+        app:layout_constraintTop_toBottomOf="@+id/card3"
+        app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <ImageButton
+        android:id="@+id/card7"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="selectCardOnClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/card8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card4"
+        app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <ImageButton
+        android:id="@+id/card8"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="selectCardOnClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/card7"
+        app:layout_constraintTop_toBottomOf="@+id/card5"
+        app:srcCompat="@android:drawable/ic_menu_help" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="WYGRANA"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
