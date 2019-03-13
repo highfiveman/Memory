@@ -11,6 +11,7 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.io.File;
@@ -28,11 +29,13 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> paths;
     private ImageButton currentButton;
     private ArrayList<Boolean> clickedImageButtons;
+    int counterOfAddedPictures = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setPlayButtonOff();
 
         paths = new ArrayList<>(Arrays.asList("","","",""));
         clickedImageButtons = new ArrayList<>(Arrays.asList(false,false,false,false));
@@ -78,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void takePhotoOnClick(View view)
     {
+
         ImageButton clickedButton = (ImageButton)view;
         int buttonIndex = Integer.parseInt(clickedButton.getTag().toString())-1;
         if(!clickedImageButtons.get(buttonIndex))
@@ -85,15 +89,28 @@ public class MainActivity extends AppCompatActivity {
             currentButton = clickedButton;
 
             clickedImageButtons.set(buttonIndex,true);
+            counterOfAddedPictures++;
             dispatchTakePictureIntent(buttonIndex);
         }
     }
+    private void setPlayButtonOn() {
+        Button play = findViewById(R.id.button);
+        play.setEnabled(true);
+    }
+
+    private void setPlayButtonOff() {
+        Button play = findViewById(R.id.button);
+        play.setEnabled(false);
+    }
+
 
     public void startGameOnClick(View view)
     {
         Intent intent = new Intent(this,GameActivity.class);
         intent.putExtra("paths",paths);
+
         startActivity(intent);
+
     }
 
     @Override
@@ -107,6 +124,11 @@ public class MainActivity extends AppCompatActivity {
             bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),bitmap.getHeight(), matrix, true);
             currentButton.setScaleType(ImageButton.ScaleType.FIT_XY);
             currentButton.setImageBitmap(bitmap);
+
+            if (counterOfAddedPictures == 4 )
+            {
+                setPlayButtonOn();
+            }
         }
     }
 
